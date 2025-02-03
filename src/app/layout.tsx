@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
+import { LanguageProvider } from '@/i18n/LanguageContext';
 
 export const metadata: Metadata = {
   title: "Unblur Image & Enhance Quality with AI | Unblurimg.io",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-100">
-        <Header />
-        {children}
+        <LanguageProvider>
+          <Header />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

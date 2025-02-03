@@ -1,9 +1,11 @@
 "use client";
 import Image from "next/image";
 import {useState} from "react"
+import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Header() {
-  const [language, setLanguage] = useState("English");
+  const { locale, setLocale, t } = useLanguage();
+
   return (
     <header className="w-full flex justify-between items-center px-6 py-3 bg-black text-white shadow-md">
       {/* 左侧 Logo */}
@@ -14,22 +16,21 @@ export default function Header() {
 
       {/* 中间导航 */}
       <nav className="hidden md:flex gap-6">
-        <a href="#" className="hover:text-green-400">Features</a>
-        <a href="#" className="hover:text-green-400">Blog</a>
-        <a href="#" className="hover:text-green-400">Pricing</a>
+        <a href="#" className="hover:text-green-400">{t('header.features')}</a>
+        <a href="#" className="hover:text-green-400">{t('header.blog')}</a>
+        <a href="#" className="hover:text-green-400">{t('header.pricing')}</a>
       </nav>
 
       {/* 右侧部分 */}
       <div className="flex items-center gap-4">
         {/* 语言选择下拉框 */}
         <select
-          className="bg-black border border-gray-600 px-2 py-1 rounded text-white"
-          value={language}
-          onChange={(e) => setLanguage(e.target.value)}
+          value={locale}
+          onChange={(e) => setLocale(e.target.value as 'en' | 'zh')}
+          className="bg-transparent text-white"
         >
-          <option>English</option>
-          <option>中文</option>
-          <option>Español</option>
+          <option value="en">English</option>
+          <option value="zh">中文</option>
         </select>
       </div>
     </header>
