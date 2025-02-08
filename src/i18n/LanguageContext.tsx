@@ -14,9 +14,6 @@ type NestedKeyOf<ObjectType extends object> = {
     : `${Key}`
 }[keyof ObjectType & (string | number)];
 
-// 添加一个工具类型来处理数组
-type TranslationValue = string | { [key: string]: any } | any[];
-
 interface LanguageContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
