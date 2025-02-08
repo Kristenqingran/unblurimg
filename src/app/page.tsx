@@ -350,7 +350,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {t('howItWorks.steps').map((step, index) => (
+              {t<Array<{title: string; description: string}>>('howItWorks.steps').map((step, index) => (
                 <div key={index} className="text-center p-6 rounded-lg bg-gray-50">
                   <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                     {index + 1}
@@ -370,7 +370,7 @@ export default function Home() {
               {t('faq.title')}
             </h2>
             <div className="max-w-2xl mx-auto">
-              {t('faq.items').map((faq, index) => (
+              {t<Array<{question: string; answer: string}>>('faq.items').map((faq, index) => (
                 <Disclosure key={index} as="div" className="mt-4">
                   {({ open }) => (
                     <>

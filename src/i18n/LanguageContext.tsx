@@ -14,11 +14,13 @@ type NestedKeyOf<ObjectType extends object> = {
     : `${Key}`
 }[keyof ObjectType & (string | number)];
 
+// 添加一个工具类型来处理数组
+type TranslationValue = string | { [key: string]: any } | any[];
+
 interface LanguageContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  // 修改 t 函数的类型定义，使用 NestedKeyOf
-  t: (key: NestedKeyOf<Translations>) => string;
+  t: <T = string>(key: NestedKeyOf<Translations>) => T;
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -31,11 +33,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     zh,
   };
 
-  const t = (key: NestedKeyOf<Translations>): string => {
+  const t = <T = string>(key: NestedKeyOf<Translations>): T => {
     try {
-      return getNestedValue(translations[currentLocale], key);
+      return getNestedValue(translations[currentLocale], key) as T;
     } catch {
-      return key;
+      return key as unknown as T;
     }
   };
 
