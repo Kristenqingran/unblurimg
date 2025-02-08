@@ -1,4 +1,4 @@
-export default {
+const translations = {
   meta: {
     title: "Unblur Image & Enhance Quality with AI",
     description: "Unblur images instantly with AI! Enhance image quality, sharpen blurry photos, and restore lost details online."
@@ -106,4 +106,6 @@ export default {
     upscale: "Upscale Image",
     scaleFactor: "Scale Factor"
   }
-}; 
+};
+
+export default translations; 

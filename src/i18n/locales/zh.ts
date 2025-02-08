@@ -1,4 +1,4 @@
-export default {
+const translations = {
   meta: {
     title: "使用AI去除图片模糊并提升质量",
     description: "使用AI立即去除图片模糊！提升图片质量，锐化模糊照片，在线恢复丢失的细节。"
@@ -106,4 +106,6 @@ export default {
     upscale: "放大图片",
     scaleFactor: "放大倍数"
   }
-}; 
+};
+
+export default translations; 

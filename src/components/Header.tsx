@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import {useState} from "react"
 import { useLanguage } from '@/i18n/LanguageContext';
 
 export default function Header() {
@@ -11,7 +10,7 @@ export default function Header() {
       {/* 左侧 Logo */}
       <div className="flex items-center gap-2">
         <Image src="/logo.png" alt="Logo" width={30} height={30} />
-        <span className="text-lg font-semibold">Unblurimg.io</span>
+        <span className="text-lg font-semibold">Unblurimage.co</span>
       </div>
 
       {/* 中间导航 */}
