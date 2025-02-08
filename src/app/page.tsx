@@ -233,11 +233,11 @@ export default function Home() {
                   <p className="text-xs text-gray-400 text-center">
                     {t('upload.terms')}
                     <a href="/terms" className="text-blue-500 hover:underline">
-                      {t('termsLink')}
+                      {t('upload.termsLink')}
                     </a>{" "}
                     {t('upload.and')}
                     <a href="/privacy" className="text-blue-500 hover:underline">
-                      {t('privacyLink')}
+                      {t('upload.privacyLink')}
                     </a>
                     .
                   </p>
