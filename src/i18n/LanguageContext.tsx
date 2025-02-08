@@ -7,10 +7,18 @@ import zh from './locales/zh';
 type Locale = 'en' | 'zh';
 type Translations = typeof en;
 
+// 添加递归类型来支持嵌套的键
+type NestedKeyOf<ObjectType extends object> = {
+  [Key in keyof ObjectType & (string | number)]: ObjectType[Key] extends object
+    ? `${Key}` | `${Key}.${NestedKeyOf<ObjectType[Key]>}`
+    : `${Key}`
+}[keyof ObjectType & (string | number)];
+
 interface LanguageContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: (key: keyof Translations) => string;
+  // 修改 t 函数的类型定义，使用 NestedKeyOf
+  t: (key: NestedKeyOf<Translations>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | null>(null);
@@ -23,7 +31,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     zh,
   };
 
-  const t = (key: keyof Translations): string => {
+  const t = (key: NestedKeyOf<Translations>): string => {
     try {
       return getNestedValue(translations[currentLocale], key);
     } catch {
