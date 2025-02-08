@@ -54,13 +54,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   );
 }
 
-function getNestedValue(obj: Record<string, unknown>, path: string): string {
+function getNestedValue(obj: Record<string, unknown>, path: string): unknown {
   return path.split('.').reduce((current: unknown, key: string) => {
     if (current && typeof current === 'object') {
       return (current as Record<string, unknown>)[key];
     }
     return key;
-  }, obj) as string;
+  }, obj);
 }
 
 export function useLanguage() {
