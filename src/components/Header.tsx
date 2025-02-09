@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useLanguage } from '@/i18n/LanguageContext';
+import Link from 'next/link';
 
 export default function Header() {
   const { locale, setLocale, t } = useLanguage();
@@ -15,9 +16,17 @@ export default function Header() {
 
       {/* 中间导航 */}
       <nav className="hidden md:flex gap-6">
-        <a href="#" className="hover:text-green-400">{t('header.features')}</a>
-        <a href="#" className="hover:text-green-400">{t('header.blog')}</a>
-        <a href="#" className="hover:text-green-400">{t('header.pricing')}</a>
+        <Link href="/" className="hover:text-green-400">
+          {t('header.features')}
+        </Link>
+        
+        <Link href="/blog" className="hover:text-green-400">
+          {t('header.blog')}
+        </Link>
+        
+        <Link href="/price" className="hover:text-green-400">
+          {t('header.pricing')}
+        </Link>
       </nav>
 
       {/* 右侧部分 */}
