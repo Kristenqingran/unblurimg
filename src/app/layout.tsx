@@ -6,6 +6,9 @@ import { LanguageProvider } from '@/i18n/LanguageContext';
 export const metadata: Metadata = {
   title: "Unblur Image & Enhance Quality with AI | Unblurimg.io",
   description: "Unblur images instantly with AI! Enhance image quality, sharpen blurry photos, and restore lost details online.",
+  icons: {
+    icon: '/favicon.ico', // 或 '/logo.png'
+  }
 };
 
 export default function RootLayout({
