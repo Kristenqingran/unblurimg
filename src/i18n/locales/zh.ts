@@ -79,7 +79,7 @@ const translations = {
       privacy: "隐私政策",
       terms: "服务条款"
     },
-    copyright: "由 Unblurimg.io 设计和开发"
+    copyright: "由 Unblurimg.co 设计和开发"
   },
   errors: {
     fileTooLarge: "文件大小超过10MB限制",
