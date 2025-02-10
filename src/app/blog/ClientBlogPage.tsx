@@ -50,8 +50,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function ClientBlogPage() {
-  const { t } = useLanguage();
-
   return (
     <main className="min-h-screen bg-white">
       <div className="container mx-auto px-6 py-8">

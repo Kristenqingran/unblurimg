@@ -106,40 +106,6 @@ export default function Home() {
     }
   };
 
-  const steps = [
-    {
-      title: "Upload Your Image",
-      description: "Simply drag & drop your image or click to upload. We support various formats including PNG, JPEG, JPGand BMP."
-    },
-    {
-      title: "Choose Enhancement Options",
-      description: "Select the AI enhancement options that best suit your needs."
-    },
-    {
-      title: "Download Your Unblurred Image",
-      description: "Get your enhanced, crystal-clear image in just seconds. Download and enjoy the improved quality."
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "What image formats do you support?",
-      answer: "We support most common image formats including PNG, JPEG, JPG, and WebP. All uploads are processed securely."
-    },
-    {
-      question: "How long does the enhancement process take?",
-      answer: "Most images are processed within 10-30 seconds, depending on the size and selected enhancement options."
-    },
-    {
-      question: "Is there a file size limit?",
-      answer: "Yes, we accept images up to 10MB in size. For larger files, please compress them before uploading."
-    },
-    {
-      question: "How does the AI enhancement work?",
-      answer: "Our advanced AI algorithms analyze your image, identify blur patterns, and apply smart sharpening techniques to restore clarity and detail."
-    }
-  ];
-
   // 添加参数调整控件
   const renderEnhanceControls = () => (
     <div className="mt-4 space-y-4">
