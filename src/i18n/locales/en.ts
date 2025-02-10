@@ -1,6 +1,6 @@
 const translations = {
   meta: {
-    title: "Unblur Image & Enhance Quality with AI",
+    title: "Unblur Image & Enhance Quality with AI | Unblurimg.co",
     description: "Unblur images instantly with AI! Enhance image quality, sharpen blurry photos, and restore lost details online."
   },
   header: {
@@ -36,13 +36,13 @@ const translations = {
   },
   upload: {
     button: "Upload Image",
-    dropText: "Drop an Image or Paste URL",
-    formats: "Supported formats: png jpeg jpg webp",
-    terms: "By uploading an image or URL you agree to our",
-    termsLink: "Terms of Use",
+    processing: "Processing...",
+    dropText: "or drag and drop your image here",
+    formats: "Supported formats: JPG, PNG, WEBP (max 10MB)",
+    terms: "By uploading an image you agree to our",
     and: "and",
-    privacyLink: "Privacy Policy",
-    processing: "Processing..."
+    termsLink: "Terms of Service",
+    privacyLink: "Privacy Policy"
   },
   faq: {
     title: "Frequently Asked Questions",
