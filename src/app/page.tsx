@@ -106,6 +106,40 @@ export default function Home() {
     }
   };
 
+  const steps = [
+    {
+      title: "Upload Your Image",
+      description: "Simply drag & drop your image or click to upload. We support various formats including PNG, JPEG, JPGand BMP."
+    },
+    {
+      title: "Choose Enhancement Options",
+      description: "Select the AI enhancement options that best suit your needs."
+    },
+    {
+      title: "Download Your Unblurred Image",
+      description: "Get your enhanced, crystal-clear image in just seconds. Download and enjoy the improved quality."
+    }
+  ];
+
+  const faqs = [
+    {
+      question: "What image formats do you support?",
+      answer: "We support most common image formats including PNG, JPEG, JPG, and WebP. All uploads are processed securely."
+    },
+    {
+      question: "How long does the enhancement process take?",
+      answer: "Most images are processed within 10-30 seconds, depending on the size and selected enhancement options."
+    },
+    {
+      question: "Is there a file size limit?",
+      answer: "Yes, we accept images up to 10MB in size. For larger files, please compress them before uploading."
+    },
+    {
+      question: "How does the AI enhancement work?",
+      answer: "Our advanced AI algorithms analyze your image, identify blur patterns, and apply smart sharpening techniques to restore clarity and detail."
+    }
+  ];
+
   // 添加参数调整控件
   const renderEnhanceControls = () => (
     <div className="mt-4 space-y-4">
@@ -233,11 +267,11 @@ export default function Home() {
                   <p className="text-xs text-gray-400 text-center">
                     {t('upload.terms')}
                     <a href="/terms" className="text-blue-500 hover:underline">
-                      {t('upload.termsLink')}
+                      {t('termsLink')}
                     </a>{" "}
                     {t('upload.and')}
                     <a href="/privacy" className="text-blue-500 hover:underline">
-                      {t('upload.privacyLink')}
+                      {t('privacyLink')}
                     </a>
                     .
                   </p>
@@ -350,7 +384,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {t<Array<{title: string; description: string}>>('howItWorks.steps').map((step, index) => (
+              {t('howItWorks.steps').map((step, index) => (
                 <div key={index} className="text-center p-6 rounded-lg bg-gray-50">
                   <div className="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                     {index + 1}
@@ -370,7 +404,7 @@ export default function Home() {
               {t('faq.title')}
             </h2>
             <div className="max-w-2xl mx-auto">
-              {t<Array<{question: string; answer: string}>>('faq.items').map((faq, index) => (
+              {t('faq.items').map((faq, index) => (
                 <Disclosure key={index} as="div" className="mt-4">
                   {({ open }) => (
                     <>
