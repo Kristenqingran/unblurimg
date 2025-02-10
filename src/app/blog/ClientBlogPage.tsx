@@ -1,5 +1,4 @@
 "use client";
-import { useLanguage } from '@/i18n/LanguageContext';
 import Image from 'next/image';
 import Link from 'next/link';
 
